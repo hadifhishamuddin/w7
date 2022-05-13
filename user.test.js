@@ -17,12 +17,12 @@ describe("User Account", () => {
 
 	test("New user registration", async () => {
 		const res = await User.register("abu", "44dd", "b0220100xx", "0184342222")
-		expect(res).toBe("new staff registered")
+		expect(res).toBe("user saved")
 	})
 
 	test("Duplicate username", async () => {
 		const res = await User.register("abu", "44dd", "b0220100xx", "0184342222")
-		expect(res).toBe("username already existed")
+		expect(res).toBe("username exists")
 	})
 
 	test("User login invalid username", async () => {
