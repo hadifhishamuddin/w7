@@ -13,7 +13,7 @@ class User {
 				if (user) {
 					if ( user.username == username )
 					{
-						return "username already existed"
+						return "username exists"
 					}
 				}
 		 
@@ -25,7 +25,7 @@ class User {
 					'email': email,
 					'phone number': phonenumber,
 					})
-				return "new staff registered"
+				return "user saved"
 				}
 			}) 
 	}
