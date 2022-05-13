@@ -5,7 +5,7 @@ class User {
 		users = await conn.db("week7").collection("users")
 	}
 
-	static async register(username, password, email, phonenumber) {
+	static async register(username, password, phonenumber) {
 		// TODO: Check if username exists
 		return users.findOne({
 			'username': username,
@@ -16,13 +16,12 @@ class User {
 						return "username exists"
 					}
 				}
-		 
+ 
 		// TODO: Save user to database
 				else{
 					await users.insertOne({      
 					'username' : username,
 					'password' : password,
-					'email': email,
 					'phone number': phonenumber,
 					})
 				return "user saved"
@@ -30,7 +29,7 @@ class User {
 			}) 
 	}
 
-	static async login(username, password, email, phonenumber) {
+	static async login(username, password, phonenumber) {
 		// TODO: Check if username exists
 		return users.findOne({        
   			'username': username   
@@ -47,7 +46,7 @@ class User {
 		// invalid username		
 				else
 				{
-					return "Invalid username"
+					return "Incorrect username"
 				}
 			})
 		// TODO: Return user object
