@@ -16,27 +16,27 @@ describe("User Account", () => {
 	})
 
 	test("New user registration", async () => {
-		const res = await User.register("abu", "44dd", "b0220100xx", "0184342222")
+		const res = await User.register("abu", "44dd", "0184342222")
 		expect(res).toBe("user saved")
 	})
 
 	test("Duplicate username", async () => {
-		const res = await User.register("abu", "44dd", "b0220100xx", "0184342222")
+		const res = await User.register("abu", "44dd", "0184342222")
 		expect(res).toBe("username exists")
 	})
 
-	test("User login invalid username", async () => {
-		const res = await User.login("syahmi", "44dd", "b0220100xx", "0184342222")
-		expect(res).toBe("Invalid username")
+	test("User login incorrect username", async () => {
+		const res = await User.login("syahmi", "44dd", "0184342222")
+		expect(res).toBe("Incorrect username")
 	})
 
-	test("User login invalid password", async () => {
-		const res = await User.login("abu", "44de", "b0220100xx", "0184342222")
+	test("User login incorrect password", async () => {
+		const res = await User.login("abu", "44de", "0184342222")
 		expect(res).toBe("failed")
 	})
 
 	test("User login successfully", async () => {
-		const res = await User.login("abu", "44dd", "b0220100xx", "0184342222")
+		const res = await User.login("abu", "44dd", "0184342222")
 		expect(res).toBe("passed")
 	})
 });
